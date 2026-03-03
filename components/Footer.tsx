@@ -45,9 +45,9 @@ export default function Footer() {
             <h4 className="font-sora font-bold text-white mb-6 uppercase tracking-wider text-sm">Contact</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:shahhussaindev@gmail.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
+                <a href="mailto:shah@growthai.in" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
                   <Mail className="w-4 h-4 group-hover:text-[#0EA5E9]" />
-                  <span>shahhussaindev@gmail.com</span>
+                  <span>shah@growthai.in</span>
                 </a>
               </li>
               <li>
