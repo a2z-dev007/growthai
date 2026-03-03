@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useLenis } from '@studio-freight/react-lenis';
+import { useLenis } from 'lenis/react';
 
 export function useParallax(multiplier = 0.5) {
   const [offset, setOffset] = useState(0);
