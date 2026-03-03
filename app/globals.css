@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Agency';
+  src: url('/agency.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-background: #0B0F19;
+  --color-primary: #22C55E;
+  --color-secondary: #0EA5E9;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  --font-sora: var(--font-sora), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+  --font-agency: 'Agency', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Let Lenis handle smooth scrolling */
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  /* Lenis smooth scroll styles */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#22C55E] to-[#0EA5E9];
+  }
+  .bg-gradient-glow {
+    @apply bg-gradient-to-r from-[#22C55E]/20 to-[#0EA5E9]/20 blur-3xl rounded-full;
+  }
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+  
+  .animate-text-edge {
+    color: transparent;
+    -webkit-text-fill-color: var(--color-background);
+    -webkit-text-stroke: 1.5px transparent;
+    background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(34,197,94,0.5) 25%, rgba(14,165,233,0.5) 50%, rgba(34,197,94,0.5) 75%, rgba(255,255,255,0.03) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animatedEdgeGradient 5s linear infinite;
+  }
+  
+  .animate-marquee-left {
+    animation: marquee-left 35s linear infinite;
+  }
+  
+  .animate-marquee-right {
+    animation: marquee-right 35s linear infinite;
+  }
+}
+
+@keyframes animatedEdgeGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
