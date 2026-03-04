@@ -148,9 +148,9 @@ export default function HeroSection() {
           <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(34,197,94,0.3)]">
             Start Your MVP
           </button>
-          <button className="px-8 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-all">
-            Book Free Strategy Call
-          </button>
+          <a href="tel:+917071967997" className="px-8 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-all inline-block">
+            Consult Now
+          </a>
         </motion.div>
       </div>
     </section>

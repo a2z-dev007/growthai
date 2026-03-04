@@ -55,7 +55,7 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <section id="pricing" className="py-32 relative bg-[#0B0F19]">
+    <section id="pricing" className="py-16 md:py-32 relative bg-[#0B0F19]">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-glow opacity-10 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">

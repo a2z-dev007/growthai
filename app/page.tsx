@@ -3,7 +3,8 @@ import SocialProof from '@/components/SocialProof';
 import ServicesSection from '@/components/ServicesSection';
 import MVPFramework from '@/components/MVPFramework';
 import WhyGrowthAI from '@/components/WhyGrowthAI';
-import CaseStudies from '@/components/CaseStudies';
+import AboutUs from '@/components/AboutUs';
+import ProjectsShowcase from '@/components/ProjectsShowcase';
 import Pricing from '@/components/Pricing';
 import FinalCTA from '@/components/FinalCTA';
 import ContactForm from '@/components/ContactForm';
@@ -21,8 +22,9 @@ export default function Home() {
       <ServicesSection />
       <MVPFramework />
       <WhyGrowthAI />
+      <AboutUs />
       <GlowingStrip />
-      <CaseStudies />
+      <ProjectsShowcase />
       {/* <Pricing /> */}
       <FinalCTA />
       <ContactForm />

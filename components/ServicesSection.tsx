@@ -48,7 +48,7 @@ export default function ServicesSection() {
   const bgY = useParallax(0.15);
   
   return (
-    <section id="services" className="py-32 relative bg-[#0B0F19] overflow-hidden">
+    <section id="services" className="py-16 md:py-32 relative bg-[#0B0F19] overflow-hidden">
       {/* Parallax background glow */}
       <motion.div 
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-glow opacity-10 pointer-events-none"

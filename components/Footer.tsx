@@ -6,12 +6,12 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B0F19] border-t border-white/10 pt-20 relative overflow-hidden flex flex-col items-center">
+    <footer className="bg-[#0B0F19] border-t border-white/10 pt-12 md:pt-20 relative overflow-hidden flex flex-col items-center">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[200px] bg-gradient-glow opacity-5 pointer-events-none" />
       
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
                <img src="/growth-logo-ai.png" alt="GrowthAI Logo" className="h-32 w-auto" />
             </Link>
@@ -32,12 +32,24 @@ export default function Footer() {
           </div>
           
           <div>
+            <h4 className="font-sora font-bold text-white mb-6 uppercase tracking-wider text-sm">Company</h4>
+            <ul className="space-y-4">
+              <li><Link href="/#about" className="text-gray-400 hover:text-[#22C55E] transition-colors">About Us</Link></li>
+              <li><Link href="/#framework" className="text-gray-400 hover:text-[#22C55E] transition-colors">Framework</Link></li>
+              <li><Link href="/#projects" className="text-gray-400 hover:text-[#22C55E] transition-colors">Our Work</Link></li>
+              <li><Link href="/#pricing" className="text-gray-400 hover:text-[#22C55E] transition-colors">Pricing</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-sora font-bold text-white mb-6 uppercase tracking-wider text-sm">Services</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Web Apps</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#22C55E] transition-colors">Mobile Development</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#22C55E] transition-colors">SaaS Platforms</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Chatbots</a></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Website Development</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Web Apps</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Mobile Apps</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">SaaS Platforms</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Chatbots</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">E-Commerce Systems</Link></li>
             </ul>
           </div>
           
@@ -71,8 +83,8 @@ export default function Footer() {
             © {new Date().getFullYear()} GrowthAI. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

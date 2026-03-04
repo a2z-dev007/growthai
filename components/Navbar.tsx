@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +16,17 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', hash);
+      }
+    }
+  };
 
   return (
     <motion.nav
@@ -30,15 +43,16 @@ export default function Navbar() {
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
-          <Link href="#services" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Services</Link>
-          <Link href="#framework" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Framework</Link>
-          <Link href="#work" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Work</Link>
-          <Link href="#pricing" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Pricing</Link>
+          <Link href="/#about" onClick={(e) => handleNavClick(e, '#about')} className="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</Link>
+          <Link href="/#services" onClick={(e) => handleNavClick(e, '#services')} className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Services</Link>
+          <Link href="/#framework" onClick={(e) => handleNavClick(e, '#framework')} className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Framework</Link>
+          <Link href="/#projects" onClick={(e) => handleNavClick(e, '#projects')} className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Work</Link>
+          {/* <Link href="/#pricing" onClick={(e) => handleNavClick(e, '#pricing')} className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Pricing</Link> */}
         </div>
 
-        <button className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-sm font-medium transition-all hover:scale-105 active:scale-95">
-          Book Strategy Call
-        </button>
+        <a href="tel:+917071967997" className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-sm font-medium transition-all hover:scale-105 active:scale-95 inline-block">
+          Consult Now
+        </a>
       </div>
     </motion.nav>
   );

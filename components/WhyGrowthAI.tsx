@@ -34,7 +34,7 @@ const reasons = [
 
 export default function WhyGrowthAI() {
   return (
-    <section className="py-32 relative bg-[#0B0F19] overflow-hidden">
+    <section className="py-16 md:py-32 relative bg-[#0B0F19] overflow-hidden">
       {/* Parallax background elements */}
       <motion.div 
         className="absolute top-20 left-10 w-64 h-64 bg-[#22C55E]/5 rounded-full blur-3xl"

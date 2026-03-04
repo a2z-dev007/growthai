@@ -122,7 +122,7 @@ export default function FloatingContact() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#22C55E]/20 to-[#0EA5E9]/20 blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
         
         {/* Button content */}
-        <div className="relative z-10 flex items-center justify-center">
+        <div className="relative z-10 flex items-center justify-center rounded-full">
           <AnimatePresence mode="wait">
             {isExpanded ? (
               <motion.div
@@ -140,7 +140,7 @@ export default function FloatingContact() {
                 initial={{ scale: 0, rotate: -90 }}
                 animate={{ scale: 1, rotate: 0 }}
                 exit={{ scale: 0, rotate: -90 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
               >
                 <Mail className="w-7 h-7 text-white" />
               </motion.div>

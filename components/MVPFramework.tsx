@@ -37,7 +37,7 @@ export default function MVPFramework() {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="framework" className="py-32 relative bg-[#0B0F19]" ref={containerRef}>
+    <section id="framework" className="py-16 md:py-32 relative bg-[#0B0F19]" ref={containerRef}>
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-24">
           <motion.h2

@@ -5,7 +5,7 @@ import { Send, User, Mail, MessageSquare } from 'lucide-react';
 
 export default function ContactForm() {
   return (
-    <section id="contact" className="py-24 relative bg-[#0B0F19] overflow-hidden">
+    <section id="contact" className="py-12 md:py-24 relative bg-[#0B0F19] overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#0EA5E9]/10 to-transparent blur-[80px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#22C55E]/10 to-transparent blur-[80px] rounded-full pointer-events-none" />
@@ -32,7 +32,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold">Email Us</p>
-                <p className="font-medium">shahhussaindev@gmail.com</p>
+                <p className="font-medium">shah@growthai.in</p>
               </div>
             </div>
           </div>

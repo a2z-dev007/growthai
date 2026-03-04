@@ -88,7 +88,7 @@ function TiltCard({ project }: { project: typeof projects[0] }) {
 
 export default function CaseStudies() {
   return (
-    <section id="work" className="py-32 relative bg-[#0B0F19]">
+    <section id="work" className="py-16 md:py-32 relative bg-[#0B0F19]">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <motion.h2
