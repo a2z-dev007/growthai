@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { Users, Target, Zap, Globe } from 'lucide-react';
 
 const stats = [
-  { label: 'Successful Projects', value: '10+', icon: Target, color: '#0EA5E9' },
+  { label: 'Successful Projects', value: '15+', icon: Target, color: '#0EA5E9' },
   { label: 'Global Clients', value: '12+', icon: Globe, color: '#22C55E' },
-  { label: 'Apps Delivered', value: '2+', icon: Zap, color: '#F59E0B' },
-  { label: 'Team Members', value: '10+', icon: Users, color: '#EC4899' },
+  { label: 'Total Apps Built', value: '5+', icon: Zap, color: '#F59E0B' },
+  { label: 'Experts Team', value: '10+', icon: Users, color: '#EC4899' },
 ];
 
 export default function AboutUs() {
@@ -59,10 +59,10 @@ export default function AboutUs() {
                 At GrowthAI, we orchestrate the perfect symphony of cutting-edge technology and human creativity. We specialize in building robust web applications, scalable mobile apps, and custom software solutions designed for growth.
               </p>
               <p>
-                Founded on the belief that premium development should be accessible and beautifully integrated, we partner with ambitious startups and enterprises to transform their boldest ideas into reality. We act as your dedicated technical partners from MVP to global scale.
+                Founded on the belief that premium development should be accessible and beautifully integrated, we partner with ambitious startups and enterprises to transform their boldest ideas into reality. <span className="text-white font-semibold">We build AI Intelligent products and platforms</span> that act as your dedicated technical partners from MVP to global scale.
               </p>
               <p>
-                Our mission is simple: to build software that doesn't merely keep up with the market, but actively redefines it.
+                Our mission is simple: to build software that doesn't merely keep up with the market, but actively redefines it. <span className="text-white font-semibold italic">We work in all domains</span>, from <span className="text-white font-bold">Healthcare to Finance & Marketing</span>, delivering specialized value wherever your business operates.
               </p>
             </div>
 

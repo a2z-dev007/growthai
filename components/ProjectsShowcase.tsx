@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, X, ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
+import { ExternalLink, X, ChevronLeft, ChevronRight, Image as ImageIcon, Eye } from 'lucide-react';
 
 type Category = 'All' | 'Full Stack' | 'Frontend' | 'Backend' | 'Mobile Apps';
 
@@ -14,7 +14,7 @@ const projects = [
     title: 'Kangpack',
     description: 'A comprehensive full-stack platform featuring modern packaging solutions. Built for scale, providing seamless e-commerce tracking and ordering experiences.',
     category: 'Full Stack',
-    tags: ['Next.js', 'TypeScript', 'Node.js', 'Tailwind', 'Mongoose', 'MongoDB', 'Stripe', 'Shadcn UI', 'Tailwind CSS', 'Framer Motion'],
+    tags: ['Next.js', 'TypeScript', 'Node.js', 'Tailwind', 'MongoDB', 'Stripe'],
     images: {
       laptop: '/projects/kangpack/kangpack-laptop.webp',
       tablet: '/projects/kangpack/kangpack-tab.webp',
@@ -28,7 +28,7 @@ const projects = [
     title: 'NER Solar',
     description: 'A forward-thinking interactive platform for solar energy. Offering sleek dashboard integrations and complex data visualizations for energy quotes.',
     category: 'Full Stack',
-    tags: ['Next.js', 'TypeScript', 'Node.js', 'Tailwind', 'Mongoose', 'MongoDB', 'Stripe', 'Shadcn UI', 'Tailwind CSS', 'Framer Motion'],
+    tags: ['Next.js', 'TypeScript', 'Tailwind', 'MongoDB', 'Framer Motion'],
     images: {
       laptop: '/projects/ner-solar/ner-laptop.webp',
       tablet: '/projects/ner-solar/ner-tab.webp',
@@ -51,7 +51,6 @@ function ProjectGalleryModal({ project, onClose }: { project: Project; onClose: 
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Prevent background scrolling when modal is open
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -69,223 +68,174 @@ function ProjectGalleryModal({ project, onClose }: { project: Project; onClose: 
     setCurrentIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
   };
 
-  const currentMedia = mediaItems[currentIndex];
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4 md:p-6 lg:p-8"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4 md:p-6 lg:p-10"
       onClick={onClose}
     >
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors z-[110] shadow-md border border-white/10 hover:scale-105"
+        className="absolute top-6 right-6 p-4 bg-white/10 hover:bg-[#22C55E] rounded-full text-white transition-all z-[110] border border-white/10 hover:scale-110 active:scale-95"
       >
         <X className="w-6 h-6" />
       </button>
 
       <div
-        className="relative w-full h-full max-w-[1600px] mx-auto flex flex-col justify-between"
+        className="relative w-full h-full max-w-7xl mx-auto flex flex-col justify-center"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Title & Badge */}
-        <div className="text-center shrink-0 mt-2 md:mt-4">
-          <h3 className="text-3xl lg:text-5xl font-agency font-bold text-white tracking-widest uppercase mb-3 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+        <div className="text-center mb-8">
+          <h3 className="text-4xl md:text-6xl font-agency font-bold text-white tracking-widest uppercase mb-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
             {project.title}
           </h3>
-          <div className="inline-block px-4 py-1.5 rounded-full bg-[#22C55E]/20 border border-[#22C55E]/50 text-[#22C55E] text-sm md:text-base font-sora font-medium tracking-wide shadow-[0_0_20px_rgba(34,197,94,0.15)]">
-            {currentMedia.label}
+          <div className="inline-flex px-6 py-2 rounded-2xl bg-[#22C55E]/10 border border-[#22C55E]/30 text-[#22C55E] text-sm font-bold uppercase tracking-widest">
+            {mediaItems[currentIndex].label}
           </div>
         </div>
 
-        {/* Carousel Content */}
-        <div className="relative w-full flex-1 flex items-center justify-center group my-6 overflow-hidden">
+        <div className="relative aspect-video w-full max-h-[70vh] flex items-center justify-center group">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="absolute inset-0 flex items-center justify-center px-4"
+              initial={{ opacity: 0, x: 20, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -20, scale: 1.05 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute inset-0 flex items-center justify-center"
             >
-              {currentMedia.type === 'video' ? (
+              {mediaItems[currentIndex].type === 'video' ? (
                 <video
-                  src={currentMedia.src}
+                  src={mediaItems[currentIndex].src}
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+                  className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl"
                 />
               ) : (
                 <img
-                  src={currentMedia.src}
-                  alt={currentMedia.label}
-                  className="w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+                  src={mediaItems[currentIndex].src}
+                  alt={mediaItems[currentIndex].label}
+                  className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl"
                 />
               )}
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Controls */}
-          <div className="absolute inset-0 flex items-center justify-between p-4 px-2 md:px-8 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <button
-              onClick={handlePrev}
-              className="pointer-events-auto p-4 bg-black/60 hover:bg-[#22C55E] border border-white/20 hover:border-[#22C55E] rounded-full text-white backdrop-blur-xl transition-all shadow-2xl hover:scale-110"
-            >
-              <ChevronLeft className="w-8 h-8 md:w-10 md:h-10 text-white" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="pointer-events-auto p-4 bg-black/60 hover:bg-[#22C55E] border border-white/20 hover:border-[#22C55E] rounded-full text-white backdrop-blur-xl transition-all shadow-2xl hover:scale-110"
-            >
-              <ChevronRight className="w-8 h-8 md:w-10 md:h-10 text-white" />
-            </button>
-          </div>
+          <button
+            onClick={handlePrev}
+            className="absolute left-2 md:left-4 p-3 md:p-4 bg-black/50 hover:bg-[#22C55E] border border-white/10 rounded-2xl text-white backdrop-blur-md transition-all group-hover:translate-x-0 opacity-100"
+          >
+            <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-2 md:right-4 p-3 md:p-4 bg-black/50 hover:bg-[#22C55E] border border-white/10 rounded-2xl text-white backdrop-blur-md transition-all group-hover:translate-x-0 opacity-100"
+          >
+            <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+          </button>
         </div>
 
-        {/* Thumbnail Navigation */}
-        <div className="flex justify-center gap-4 mt-2 overflow-x-auto max-w-full pb-6 scrollbar-hide shrink-0 px-4">
-          <div className="flex gap-4 md:gap-6 bg-black/40 p-3 md:p-4 rounded-2xl border border-white/5 backdrop-blur-xl">
-            {mediaItems.map((item, index) => (
-              <button
-                key={index}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setCurrentIndex(index);
-                }}
-                className={`relative h-20 md:h-28 aspect-video rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
-                  currentIndex === index
-                    ? 'border-[#22C55E] scale-110 shadow-[0_0_30px_rgba(34,197,94,0.4)] z-10'
-                    : 'border-transparent opacity-60 hover:opacity-100 hover:scale-105'
-                }`}
-              >
-                {item.type === 'video' ? (
-                  <video src={item.src} className="w-full h-full object-cover" />
-                ) : (
-                  <img src={item.src} alt={item.label} className="w-full h-full object-cover" />
-                )}
-                
-                {/* Visual Indicator for Video */}
-                {item.type === 'video' && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                    <div className="w-8 h-8 rounded-full bg-[#22C55E]/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                      <div className="w-2.5 h-2.5 rounded-sm bg-white ml-0.5" style={{ clipPath: 'polygon(0 0, 100% 50%, 0 100%)' }} />
-                    </div>
-                  </div>
-                )}
-                
-                {/* Dark Overlay when not active */}
-                {currentIndex !== index && <div className="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors duration-300" />}
-              </button>
-            ))}
-          </div>
+        <div className="flex justify-center gap-4 mt-8 overflow-x-auto pb-4 scrollbar-hide">
+          {mediaItems.map((item, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`relative w-20 md:w-32 aspect-video rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 ${
+                currentIndex === index 
+                  ? 'border-[#22C55E] scale-110 shadow-lg' 
+                  : 'border-white/10 opacity-50 hover:opacity-100'
+              }`}
+            >
+              {item.type === 'video' ? (
+                <div className="w-full h-full bg-black flex items-center justify-center"><Eye className="w-6 h-6 text-white" /></div>
+              ) : (
+                <img src={item.src} className="w-full h-full object-cover" />
+              )}
+            </button>
+          ))}
         </div>
       </div>
     </motion.div>
   );
 }
 
-function ProjectMediaCarousel({ project, onOpenGallery }: { project: Project; onOpenGallery: () => void }) {
-  const mediaItems = [
-    { type: 'video', src: project.video, label: 'Demo Video' },
-    { type: 'image', src: project.images.laptop, label: 'Desktop View' },
-    { type: 'image', src: project.images.tablet, label: 'Tablet View' },
-    { type: 'image', src: project.images.mobile, label: 'Mobile View' },
-  ].filter((item) => item.src);
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentIndex((prev) => (prev + 1) % mediaItems.length);
-  };
-
-  const handlePrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
-  };
-
-  const currentMedia = mediaItems[currentIndex];
-
+function ProjectCard({ project, onOpenGallery }: { project: Project; onOpenGallery: () => void }) {
   return (
-    <div className="w-full relative aspect-[4/3] lg:aspect-[16/12] rounded-[2rem] overflow-hidden bg-black/20 border border-white/5 group/media shadow-2xl flex flex-col items-center justify-center">
-      <AnimatePresence mode="wait">
-        <motion.div
-           key={currentIndex}
-           initial={{ opacity: 0, scale: 0.95 }}
-           animate={{ opacity: 1, scale: 1 }}
-           exit={{ opacity: 0, scale: 1.05 }}
-           transition={{ duration: 0.3 }}
-           className="absolute inset-0 flex flex-col items-center justify-center p-6 pb-12"
-        >
-          {currentMedia.type === 'video' ? (
-            <video
-              src={currentMedia.src}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
-            />
-          ) : (
-            <img
-              src={currentMedia.src}
-              className="w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
-              alt={currentMedia.label}
-            />
-          )}
-        </motion.div>
-      </AnimatePresence>
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="w-full shrink-0 snap-center px-4 md:px-0"
+    >
+      <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-0 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-0 lg:gap-20 backdrop-blur-sm group/project hover:bg-white/[0.07] transition-all duration-500 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#22C55E]/10 to-transparent blur-[100px] pointer-events-none" />
+        
+        {/* Media Section */}
+        <div className="w-full lg:w-1/2 relative group/image order-1 lg:order-2 self-stretch">
+          <div className="relative aspect-[16/10] lg:aspect-square md:rounded-2xl overflow-hidden bg-black/40 border-b md:border border-white/10 shadow-2xl transform transition-transform duration-700 group-hover/project:scale-[1.02] group-hover/project:rotate-0.5 h-full">
+             <video src={project.video} autoPlay loop muted playsInline className="w-full h-full object-cover opacity-80 group-hover/project:opacity-100 transition-opacity" />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-6 md:p-8">
+                <div 
+                  className="px-6 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold flex items-center gap-2 cursor-pointer hover:bg-[#22C55E] transition-all transform hover:scale-105 active:scale-95 text-[10px] md:text-base"
+                  onClick={onOpenGallery}
+                >
+                  <Eye className="w-4 h-4 md:w-5 md:h-5 text-[#22C55E] group-hover:text-white" />
+                  Visual Insight
+                </div>
+             </div>
+          </div>
+          <div className="absolute -inset-4 bg-gradient-to-r from-[#22C55E]/15 to-[#0EA5E9]/15 blur-3xl opacity-0 group-hover/project:opacity-100 transition-opacity -z-10" />
+        </div>
 
-      <div className="absolute top-6 left-6 px-4 py-2 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-white text-xs font-bold font-sora z-20 uppercase tracking-widest shadow-xl">
-        {currentMedia.label}
-      </div>
+        {/* Text Content */}
+        <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 z-10 order-2 lg:order-1 text-left p-6 md:p-0">
+          <div className="space-y-2 md:space-y-4">
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-xl bg-[#0EA5E9]/10 border border-[#0EA5E9]/20 text-[#0EA5E9] text-[10px] md:text-xs font-bold uppercase tracking-widest">
+              {project.category}
+            </span>
+            <h3 className="font-agency text-3xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-tight leading-none group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#22C55E] group-hover:to-[#0EA5E9] transition-all duration-500">
+              {project.title}
+            </h3>
+          </div>
 
-      {/* Hover Overlay for Gallery */}
-      <div 
-        className="absolute inset-0 z-30 bg-black/60 backdrop-blur-sm opacity-0 group-hover/media:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
-        onClick={onOpenGallery}
-      >
-        <div className="px-6 py-3 rounded-full bg-[#22C55E] text-white font-bold font-sora flex items-center gap-2 transform translate-y-4 group-hover/media:translate-y-0 transition-all duration-300 shadow-[0_0_30px_rgba(34,197,94,0.3)] border border-[#22C55E]/50">
-          <ImageIcon className="w-5 h-5" />
-          Open Full Gallery
+          <p className="text-gray-400 text-sm md:text-lg lg:text-xl leading-relaxed font-sora line-clamp-4 lg:line-clamp-none">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span key={tag} className="px-3 py-1 md:px-4 md:py-2 rounded-xl bg-white/5 text-gray-400 font-sora text-[10px] md:text-sm border border-white/5 group-hover:border-[#22C55E]/30 transition-colors">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-row items-center gap-3 pt-4 md:pt-8 w-full">
+            <button
+              onClick={onOpenGallery}
+              className="btn-primary flex-1 md:flex-none"
+            >
+              <ImageIcon className="w-4 h-4 md:w-5 md:h-5 text-white" />
+              Gallery
+            </button>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary flex-1 md:flex-none"
+            >
+              Visit
+              <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-white" />
+            </a>
+          </div>
         </div>
       </div>
-
-      {/* Navigation Controls */}
-      <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 z-40 flex items-center justify-between pointer-events-none">
-        <button
-          onClick={handlePrev}
-          className="pointer-events-auto p-3 bg-black/70 hover:bg-[#22C55E] border border-white/10 hover:border-[#22C55E] rounded-full text-white backdrop-blur-md transition-all shadow-xl hover:scale-110 opacity-0 group-hover/media:opacity-100"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <button
-          onClick={handleNext}
-          className="pointer-events-auto p-3 bg-black/70 hover:bg-[#22C55E] border border-white/10 hover:border-[#22C55E] rounded-full text-white backdrop-blur-md transition-all shadow-xl hover:scale-110 opacity-0 group-hover/media:opacity-100"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
-
-      {/* Dots */}
-      <div className="absolute bottom-6 left-0 right-0 z-40 flex justify-center gap-2 pointer-events-auto">
-        {mediaItems.map((_, idx) => (
-          <button 
-            key={idx}
-            onClick={(e) => {
-              e.stopPropagation();
-              setCurrentIndex(idx);
-            }}
-            className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-[#22C55E] w-8 shadow-[0_0_10px_rgba(34,197,94,0.8)]' : 'bg-white/40 hover:bg-white/80 w-2'}`}
-          />
-        ))}
-      </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -298,60 +248,53 @@ export default function ProjectsShowcase() {
     (project) => activeCategory === 'All' || project.category === activeCategory
   );
 
-  const handleScrollPrev = () => {
+  const handleScroll = (direction: 'next' | 'prev') => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -scrollRef.current.offsetWidth, behavior: 'smooth' });
-    }
-  };
-
-  const handleScrollNext = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: scrollRef.current.offsetWidth, behavior: 'smooth' });
+      const { scrollLeft, offsetWidth } = scrollRef.current;
+      const target = direction === 'next' ? scrollLeft + offsetWidth : scrollLeft - offsetWidth;
+      scrollRef.current.scrollTo({ left: target, behavior: 'smooth' });
     }
   };
 
   return (
     <section id="projects" className="py-20 md:py-32 relative bg-[#0B0F19] overflow-hidden">
-      {/* Background elements */}
       <div className="absolute top-40 left-0 w-[500px] h-[500px] bg-[#0EA5E9]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-40 right-0 w-[500px] h-[500px] bg-[#22C55E]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-agency text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-4"
+            className="font-agency text-3xl md:text-7xl font-bold uppercase tracking-tight mb-6"
           >
-            Our <span className="text-gradient">Masterpieces</span>
+            Digital <span className="text-gradient">Masterpieces</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto font-sora"
+            className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto font-sora"
           >
-            Explore our recent work spanning robust web platforms, sleek mobile applications, and powerful backend systems.
+            A curated selection of high-performance digital products engineered for excellence.
           </motion.p>
         </div>
 
-        {/* Improved Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center items-center gap-3 mb-20"
+          className="flex flex-wrap justify-center gap-3 mb-10 md:mb-16"
         >
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full text-sm font-sora font-semibold transition-all duration-300 ${
+              className={`px-6 py-2.5 md:px-8 md:py-3 rounded-2xl text-xs md:text-sm font-sora font-semibold transition-all duration-300 border ${
                 activeCategory === category
-                  ? 'bg-gradient-to-r from-[#22C55E] to-[#16a34a] text-white shadow-[0_0_20px_rgba(34,197,94,0.4)] scale-105'
-                  : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-white/5'
+                  ? 'bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white border-transparent shadow-[0_0_20px_rgba(34,197,94,0.4)] scale-105'
+                  : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10 hover:text-white'
               }`}
             >
               {category}
@@ -359,107 +302,44 @@ export default function ProjectsShowcase() {
           ))}
         </motion.div>
 
-        <div className="relative w-full group">
-          {filteredProjects.length > 1 && (
-            <>
+        <div className="relative group">
+          {filteredProjects.length > 0 && (
+            <div className="flex absolute -left-4 -right-4 md:-left-16 md:-right-16 top-1/2 -translate-y-1/2 justify-between z-30 pointer-events-none px-2 md:px-0">
               <button
-                onClick={handleScrollPrev}
-                className="absolute left-0 lg:-left-12 top-1/2 -translate-y-1/2 z-30 p-4 bg-black/60 hover:bg-[#22C55E] border border-white/10 hover:border-[#22C55E] rounded-full text-white backdrop-blur-xl transition-all shadow-2xl hover:scale-110 opacity-0 group-hover:opacity-100 hidden md:flex cursor-pointer"
+                onClick={() => handleScroll('prev')}
+                className="p-3 md:p-4 rounded-2xl bg-black/60 text-white hover:bg-[#22C55E] backdrop-blur-md border border-white/10 pointer-events-auto transition-all hover:scale-110 active:scale-95 shadow-2xl opacity-100"
               >
-                <ChevronLeft className="w-8 h-8" />
+                <ChevronLeft className="w-5 h-5 md:w-8 md:h-8" />
               </button>
               <button
-                onClick={handleScrollNext}
-                className="absolute right-0 lg:-right-12 top-1/2 -translate-y-1/2 z-30 p-4 bg-black/60 hover:bg-[#22C55E] border border-white/10 hover:border-[#22C55E] rounded-full text-white backdrop-blur-xl transition-all shadow-2xl hover:scale-110 opacity-0 group-hover:opacity-100 hidden md:flex cursor-pointer"
+                onClick={() => handleScroll('next')}
+                className="p-3 md:p-4 rounded-2xl bg-black/60 text-white hover:bg-[#22C55E] backdrop-blur-md border border-white/10 pointer-events-auto transition-all hover:scale-110 active:scale-95 shadow-2xl opacity-100"
               >
-                <ChevronRight className="w-8 h-8" />
+                <ChevronRight className="w-5 h-5 md:w-8 md:h-8" />
               </button>
-            </>
+            </div>
           )}
 
           <div
             ref={scrollRef}
-            className="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-12 pt-4 w-full"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="flex gap-6 md:gap-12 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-12 w-full px-2"
           >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="popLayout" initial={false}>
               {filteredProjects.map((project) => (
-                <motion.div
+                <ProjectCard
                   key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="w-full shrink-0 snap-center bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-12 lg:gap-20 backdrop-blur-sm group/project"
-                >
-                {/* Text Content */}
-                <div className="w-full md:w-1/2 space-y-8 z-20">
-                  <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0EA5E9]/10 border border-[#0EA5E9]/20 text-[#0EA5E9] text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(14,165,233,0.15)]">
-                      {project.category}
-                    </div>
-                    <h3 className="font-agency text-4xl lg:text-6xl font-bold text-white uppercase tracking-wide">
-                      {project.title}
-                    </h3>
-                  </div>
+                  project={project}
+                  onOpenGallery={() => setSelectedProject(project)}
+                />
+              ))}
+            </AnimatePresence>
 
-                  <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-sora">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-3">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-4 py-2 rounded-xl bg-black/40 text-gray-300 font-sora text-sm border border-white/5"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-4 mt-8 pt-4 border-t border-white/5">
-                    <button
-                      onClick={() => setSelectedProject(project)}
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#22C55E] text-white font-bold font-sora hover:bg-[#1ea34d] transition-all hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
-                    >
-                      <ImageIcon className="w-5 h-5" />
-                      Show Gallery
-                    </button>
-                    {project.link !== '#' && (
-                      <a
-                        href={project.link}
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 text-white font-bold font-sora hover:bg-white/10 transition-all border border-white/10 hover:scale-105"
-                      >
-                        Visit Site
-                        <ExternalLink className="w-5 h-5" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                {/* Media Carousel Composition */}
-                <div className="w-full md:w-1/2 flex items-center justify-center mt-8 md:mt-0">
-                  <ProjectMediaCarousel project={project} onOpenGallery={() => setSelectedProject(project)} />
-                </div>
-
+            {filteredProjects.length === 0 && (
+              <motion.div className="w-full text-center py-32 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
+                <h3 className="text-3xl font-agency font-bold text-white mb-4 uppercase tracking-wider">Innovations Pending</h3>
+                <p className="text-gray-400 font-sora max-w-md mx-auto">We're currently finalizing exciting new projects. Check back soon for our latest masterpieces.</p>
               </motion.div>
-            ))}
-          </AnimatePresence>
-
-          {filteredProjects.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm"
-            >
-              <h3 className="text-2xl font-sora text-white mb-2">More Projects Coming Soon!</h3>
-              <p className="text-gray-400 font-sora">Stay tuned as we update our portfolio with incredible new products.</p>
-            </motion.div>
-          )}
-
+            )}
           </div>
         </div>
       </div>

@@ -15,8 +15,8 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-6">
                <img src="/growth-logo-ai.png" alt="GrowthAI Logo" className="h-32 w-auto" />
             </Link>
-            <p className="text-gray-400 max-w-sm mb-8 leading-relaxed">
-              Build Smart. Launch Fast. Scale with AI. We build MVPs in weeks, not months, helping startups dominate their markets with intelligent systems.
+            <p className="text-gray-400 max-w-sm mb-8 leading-relaxed font-sora">
+              Engineering performance-driven digital products that scale. <span className="text-white font-semibold italic">We build AI Intelligent products and platforms</span> for visionaries world-wide.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all">
@@ -37,19 +37,19 @@ export default function Footer() {
               <li><Link href="/#about" className="text-gray-400 hover:text-[#22C55E] transition-colors">About Us</Link></li>
               <li><Link href="/#framework" className="text-gray-400 hover:text-[#22C55E] transition-colors">Framework</Link></li>
               <li><Link href="/#projects" className="text-gray-400 hover:text-[#22C55E] transition-colors">Our Work</Link></li>
-              <li><Link href="/#pricing" className="text-gray-400 hover:text-[#22C55E] transition-colors">Pricing</Link></li>
+
             </ul>
           </div>
 
           <div>
             <h4 className="font-sora font-bold text-white mb-6 uppercase tracking-wider text-sm">Services</h4>
             <ul className="space-y-4">
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Website Development</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Web Apps</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Mobile Apps</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">SaaS Platforms</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">WordPress Development</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Mobile Apps</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Ecommerce Solutions</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">SaaS Products</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Custom Software</Link></li>
               <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Chatbots</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">E-Commerce Systems</Link></li>
             </ul>
           </div>
           
@@ -57,9 +57,9 @@ export default function Footer() {
             <h4 className="font-sora font-bold text-white mb-6 uppercase tracking-wider text-sm">Contact</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:shah@growthai.in" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
+                <a href="mailto:contact@growthai.in" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
                   <Mail className="w-4 h-4 group-hover:text-[#0EA5E9]" />
-                  <span>shah@growthai.in</span>
+                  <span>contact@growthai.in</span>
                 </a>
               </li>
               <li>

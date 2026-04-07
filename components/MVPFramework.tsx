@@ -7,23 +7,23 @@ import TiltCard from './TiltCard';
 const steps = [
   {
     number: '01',
-    title: 'Discovery & Strategy',
-    description: 'We map out your vision, identify core features, and define the AI architecture required for your MVP.',
+    title: 'Strategy & Architecture',
+    description: 'We audit your business needs, map out technical requirements, and design a scalable architecture for your product.',
   },
   {
     number: '02',
-    title: 'Rapid Prototyping',
-    description: 'Interactive wireframes and high-fidelity designs are created to visualize the user experience before coding.',
+    title: 'UI/UX Prototyping',
+    description: 'Interactive wireframes and high-fidelity designs are crafted to ensure an intuitive and premium user experience.',
   },
   {
     number: '03',
-    title: 'AI-Powered Development',
-    description: 'Our engineers build your product using modern tech stacks and integrate intelligent AI models.',
+    title: 'Agile Full-Stack Development',
+    description: 'Our expert engineers build your product using robust technologies, ensuring high performance and security.',
   },
   {
     number: '04',
-    title: 'Launch & Scale',
-    description: 'We deploy your MVP to production, monitor performance, and iterate based on real user feedback.',
+    title: 'Deployment & Support',
+    description: 'We handle the global launch, provide ongoing maintenance, and iterate based on performance analytics.',
   },
 ];
 

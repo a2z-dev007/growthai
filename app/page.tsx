@@ -18,7 +18,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#0B0F19] overflow-hidden">
       <Navbar />
       <HeroSection />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <ServicesSection />
       <MVPFramework />
       <WhyGrowthAI />

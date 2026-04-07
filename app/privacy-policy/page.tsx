@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
             If you have any questions about this privacy policy or our privacy practices, please contact us at:
           </p>
           <p className="mb-4">
-            Email: <a href="mailto:shah@growthai.in" className="text-[#0EA5E9] hover:text-[#22C55E] transition-colors">shah@growthai.in</a><br />
+            Email: <a href="mailto:contact@growthai.in" className="text-[#0EA5E9] hover:text-[#22C55E] transition-colors">contact@growthai.in</a><br />
             Phone: <a href="tel:+917071967997" className="text-[#0EA5E9] hover:text-[#22C55E] transition-colors">+91 7071967997</a>
           </p>
         </div>

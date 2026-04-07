@@ -50,8 +50,8 @@ export default function Navbar() {
           {/* <Link href="/#pricing" onClick={(e) => handleNavClick(e, '#pricing')} className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Pricing</Link> */}
         </div>
 
-        <a href="tel:+917071967997" className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-sm font-medium transition-all hover:scale-105 active:scale-95 inline-block">
-          Consult Now
+        <a href="tel:+917071967997" className="btn-primary py-2 px-6 text-xs md:text-sm">
+          Free Consultation
         </a>
       </div>
     </motion.nav>

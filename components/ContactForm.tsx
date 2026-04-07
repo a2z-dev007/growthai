@@ -18,11 +18,11 @@ export default function ContactForm() {
           viewport={{ once: true }}
           className="flex-1"
         >
-          <h2 className="font-agency text-5xl md:text-6xl font-bold uppercase tracking-tight mb-6">
+          <h2 className="font-agency text-4xl md:text-6xl font-bold uppercase tracking-tight mb-6">
             Ready to <span className="text-gradient">Innovate?</span>
           </h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed">
-            Drop us a message. Whether you have a project in mind or just want to chat about the future of AI in your business, we're ready when you are.
+          <p className="text-gray-400 text-sm md:text-lg mb-8 max-w-lg leading-relaxed font-sora">
+            Let's discuss how we can accelerate your digital journey. Whether you're a startup looking for an MVP or an enterprise needing custom software, we're here to help.
           </p>
           
           <div className="flex flex-col gap-6">
@@ -32,7 +32,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold">Email Us</p>
-                <p className="font-medium">shah@growthai.in</p>
+                <p className="font-medium text-white group-hover:text-[#22C55E] transition-colors tracking-wide">contact@growthai.in</p>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function ContactForm() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-shadow mt-2"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-shadow mt-2"
               >
                 <span>Send Message</span>
                 <Send className="w-5 h-5" />

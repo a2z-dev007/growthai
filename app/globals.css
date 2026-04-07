@@ -84,6 +84,22 @@
   .animate-marquee-right {
     animation: marquee-right 35s linear infinite;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari and Opera */
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 md:px-7 md:py-3 rounded-xl bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white font-bold text-[11px] md:text-sm transition-all hover:scale-105 active:scale-95 shadow-md flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 md:px-7 md:py-3 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold text-[11px] md:text-sm transition-all hover:bg-white/10 active:scale-95 flex items-center justify-center gap-2;
+  }
 }
 
 @keyframes animatedEdgeGradient {

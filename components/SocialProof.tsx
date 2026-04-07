@@ -48,9 +48,9 @@ export default function SocialProof() {
           transition={{ duration: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          <Counter end={10} suffix="+" label="Projects Delivered" />
+          <Counter end={12} suffix="+" label="Projects Delivered" />
           <Counter end={12} suffix="+" label="Global Clients" />
-          <Counter end={2} suffix="+" label="Apps Delivered" />
+          <Counter end={5} suffix="+" label="Full-Scale Apps" />
         </motion.div>
       </div>
     </section>

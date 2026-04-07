@@ -82,7 +82,7 @@ export default function HeroSection() {
           className="flex flex-col items-center gap-4 "
           style={{ transform: `translateY(${logoY}px)` }}
         >
-          <motion.img 
+          {/* <motion.img 
             src="/growth-logo-ai.png" 
             alt="GrowthAI Logo" 
             className="md:h-72 h-32  w-auto drop-shadow-[0_0_40px_rgba(34,197,94,0.4)]" 
@@ -96,20 +96,7 @@ export default function HeroSection() {
               ease: "easeInOut",
               times: [0, 0.5, 1]
             }}
-          />
-          {/* Subtle glow pulse effect */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-[#22C55E]/20 to-[#0EA5E9]/20 blur-3xl -z-10 rounded-full"
-            animate={{ 
-              opacity: [0.3, 0.6, 0.3],
-              scale: [1, 1.1, 1]
-            }}
-            transition={{ 
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
+          /> */}
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,38 +105,38 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-          <span className="text-sm font-medium text-gray-300">Build Smart. Launch Fast. Scale with AI.</span>
+          <span className="text-sm font-medium text-gray-300">Strategic Design. Expert Development. Exponential Growth.</span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-agency text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl uppercase leading-[1.1]"
+          className="font-agency text-3xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl uppercase leading-[1.2]"
         >
-          Launch AI-Powered Products in <span className="text-gradient">Weeks</span> — Not Months
+          Engineering Performance-Driven <span className="text-gradient">Digital Products</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed"
+          className="text-base md:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed font-sora"
         >
-          Helping startups & businesses scale with intelligent systems. We build MVPs that are ready for investors and built to scale.
+          Your strategic partner for custom software across <span className="text-white font-medium italic">all domains.</span> From <span className="text-white font-semibold">Healthcare to Finance & Marketing</span>, <span className="text-white px-1">we build AI Intelligent products and platforms</span> that turn visionary ideas into market-leading realities.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full"
         >
-          <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(34,197,94,0.3)]">
-            Start Your MVP
+          <button className="btn-primary w-fit">
+            Build Your Product
           </button>
-          <a href="tel:+917071967997" className="px-8 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-all inline-block">
-            Consult Now
+          <a href="tel:+917071967997" className="btn-secondary w-fit">
+            Free Consultation
           </a>
         </motion.div>
       </div>

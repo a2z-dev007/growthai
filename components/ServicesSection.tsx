@@ -1,45 +1,45 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Smartphone, Cloud, MessageSquare, ShoppingCart, Globe } from 'lucide-react';
+import { Globe, Smartphone, Code, ShoppingCart, Layout, MessageSquare, Laptop } from 'lucide-react';
 import { useParallax } from '@/hooks/use-parallax';
 import TiltCard from './TiltCard';
 
 const services = [
   {
-    title: 'Website Development',
-    description: 'High-performance, SEO-optimized websites built for speed and conversion.',
-    icon: Globe,
+    title: 'WordPress Development',
+    description: 'Custom, SEO-friendly WordPress websites tailored for small businesses and bloggers.',
+    icon: Layout,
     color: '#22C55E',
   },
   {
-    title: 'AI Web Apps',
-    description: 'Intelligent web applications powered by cutting-edge machine learning models.',
-    icon: Code,
+    title: 'Cross Platform Mobile Apps',
+    description: 'Beautiful, high-performance mobile apps for iOS and Android using a single codebase.',
+    icon: Smartphone,
     color: '#0EA5E9',
   },
   {
-    title: 'AI Mobile Apps',
-    description: 'Native and cross-platform mobile experiences with integrated AI features.',
-    icon: Smartphone,
+    title: 'Ecommerce Solutions',
+    description: 'Scalable online stores with seamless payment integration and user-friendly management.',
+    icon: ShoppingCart,
     color: '#8B5CF6',
   },
   {
-    title: 'SaaS Platforms',
-    description: 'Scalable multi-tenant architectures designed for rapid growth and recurring revenue.',
-    icon: Cloud,
+    title: 'SaaS Products',
+    description: 'End-to-end development of scalable multi-tenant software platforms.',
+    icon: Laptop,
     color: '#F59E0B',
   },
   {
-    title: 'AI Chatbots',
-    description: 'Context-aware conversational agents that automate customer support and sales.',
-    icon: MessageSquare,
+    title: 'Custom Software',
+    description: 'Bespoke software solutions designed to solve your unique business challenges.',
+    icon: Code,
     color: '#EC4899',
   },
   {
-    title: 'E-Commerce Systems',
-    description: 'Intelligent storefronts with personalized product recommendations and dynamic pricing.',
-    icon: ShoppingCart,
+    title: 'AI Chatbots',
+    description: 'Intelligent, 24/7 conversational agents to automate customer service and sales.',
+    icon: MessageSquare,
     color: '#14B8A6',
   },
 ];
@@ -82,7 +82,7 @@ export default function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-agency text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6"
+            className="font-agency text-3xl md:text-5xl font-bold uppercase tracking-tight mb-6"
           >
             Our <span className="text-gradient">Services</span>
           </motion.h2>
@@ -91,9 +91,9 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto text-lg"
+            className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-sora"
           >
-            We build intelligent systems that accelerate your growth and dominate your market.
+            <span className="text-white font-semibold">We build AI Intelligent products and platforms</span> that accelerate your growth and dominate your industry.
           </motion.p>
         </div>
 

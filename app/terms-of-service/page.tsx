@@ -61,7 +61,7 @@ export default function TermsOfService() {
             If you have any questions or concerns regarding these Terms of Service, you may contact us using the following details:
           </p>
           <p className="mb-4">
-            Email: <a href="mailto:shah@growthai.in" className="text-[#0EA5E9] hover:text-[#22C55E] transition-colors">shah@growthai.in</a><br />
+            Email: <a href="mailto:contact@growthai.in" className="text-[#0EA5E9] hover:text-[#22C55E] transition-colors">contact@growthai.in</a><br />
             Phone: <a href="tel:+917071967997" className="text-[#0EA5E9] hover:text-[#22C55E] transition-colors">+91 7071967997</a>
           </p>
         </div>
