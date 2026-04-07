@@ -18,7 +18,7 @@ export default function Footer() {
             <p className="text-gray-400 max-w-sm mb-8 leading-relaxed font-sora">
               Engineering performance-driven digital products that scale. <span className="text-white font-semibold italic">We build AI Intelligent products and platforms</span> for visionaries world-wide.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all">
                 <Twitter className="w-5 h-5" />
               </a>
@@ -28,7 +28,7 @@ export default function Footer() {
               <a href="#" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all">
                 <Github className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
           
           <div>
