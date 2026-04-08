@@ -176,10 +176,10 @@ function ProjectCard({ project, onOpenGallery }: { project: Project; onOpenGalle
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#22C55E]/10 to-transparent blur-[100px] pointer-events-none" />
         
         {/* Media Section */}
-        <div className="w-full lg:w-1/2 relative group/image order-1 lg:order-2 self-stretch">
-          <div className="relative aspect-[16/10] lg:aspect-square md:rounded-2xl overflow-hidden bg-black/40 border-b md:border border-white/10 shadow-2xl transform transition-transform duration-700 group-hover/project:scale-[1.02] group-hover/project:rotate-0.5 h-full">
-             <video src={project.video} autoPlay loop muted playsInline className="w-full h-full object-cover opacity-80 group-hover/project:opacity-100 transition-opacity" />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-6 md:p-8">
+        <div className="w-full lg:w-1/2 relative group/image order-1 lg:order-2">
+          <div className="relative aspect-video md:rounded-2xl overflow-hidden bg-black/40 border-b md:border border-white/10 shadow-2xl transform transition-transform duration-700 group-hover/project:scale-[1.02] flex items-center justify-center">
+             <video src={project.video} autoPlay loop muted playsInline className="w-full h-full object-cover opacity-90 group-hover/project:opacity-100 transition-opacity" />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 md:p-8">
                 <div 
                   className="px-6 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold flex items-center gap-2 cursor-pointer hover:bg-[#22C55E] transition-all transform hover:scale-105 active:scale-95 text-[10px] md:text-base"
                   onClick={onOpenGallery}
