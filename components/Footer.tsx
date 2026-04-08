@@ -15,7 +15,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-6">
                <img src="/growth-logo-ai.png" alt="GrowthAI Logo" className="h-32 w-auto" />
             </Link>
-            <p className="text-gray-400 max-w-sm mb-8 leading-relaxed font-sora">
+            <p className="text-gray-400 max-w-sm mb-8 leading-relaxed font-inter">
               Engineering performance-driven digital products that scale. <span className="text-white font-semibold italic">We build AI Intelligent products and platforms</span> for visionaries world-wide.
             </p>
             {/* <div className="flex gap-4">
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-sora font-bold text-white mb-6 uppercase tracking-wider text-sm">Company</h4>
+            <h4 className="font-inter font-bold text-white mb-6 uppercase tracking-wider text-sm">Company</h4>
             <ul className="space-y-4">
               <li><Link href="/#about" className="text-gray-400 hover:text-[#22C55E] transition-colors">About Us</Link></li>
               <li><Link href="/#framework" className="text-gray-400 hover:text-[#22C55E] transition-colors">Framework</Link></li>
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-sora font-bold text-white mb-6 uppercase tracking-wider text-sm">Services</h4>
+            <h4 className="font-inter font-bold text-white mb-6 uppercase tracking-wider text-sm">Services</h4>
             <ul className="space-y-4">
               <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">WordPress Development</Link></li>
               <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Mobile Apps</Link></li>
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-sora font-bold text-white mb-6 uppercase tracking-wider text-sm">Contact</h4>
+            <h4 className="font-inter font-bold text-white mb-6 uppercase tracking-wider text-sm">Contact</h4>
             <ul className="space-y-4">
               <li>
                 <a href="mailto:contact@growthai.in" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">

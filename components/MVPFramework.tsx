@@ -44,7 +44,7 @@ export default function MVPFramework() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-agency text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6"
+            className="font-plus-jakarta text-4xl md:text-5xl font-bold tracking-tight mb-6"
           >
             Rapid MVP <span className="text-gradient">Framework</span>
           </motion.h2>
@@ -85,10 +85,10 @@ export default function MVPFramework() {
                   className="w-full md:w-1/2 pl-20 md:pl-0 h-full"
                 >
                   <TiltCard className={`glass-panel p-8 relative overflow-hidden group ${index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'}`}>
-                    <div className="absolute -right-4 -top-4 text-8xl font-agency font-bold text-white/5 transition-transform group-hover:scale-110 duration-500 pointer-events-none">
+                    <div className="absolute -right-4 -top-4 text-8xl font-plus-jakarta font-bold text-white/5 transition-transform group-hover:scale-110 duration-500 pointer-events-none">
                       {step.number}
                     </div>
-                    <h3 className="font-agency text-2xl font-bold mb-4 text-white relative z-10">{step.title}</h3>
+                    <h3 className="font-plus-jakarta text-2xl font-bold mb-4 text-white relative z-10">{step.title}</h3>
                     <p className="text-gray-400 leading-relaxed relative z-10">{step.description}</p>
                   </TiltCard>
                 </motion.div>

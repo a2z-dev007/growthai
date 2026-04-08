@@ -17,7 +17,7 @@ export default function FinalCTA() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-agency text-4xl md:text-7xl font-bold uppercase tracking-tight mb-8 leading-[1.1]"
+          className="font-plus-jakarta text-4xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]"
         >
           Let's Build Your <br />
           <span className="text-gradient">Next Digital Breakthrough</span>
@@ -28,7 +28,7 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-md text-gray-400 mb-12 max-w-2xl mx-auto font-sora"
+          className="text-md text-gray-400 mb-12 max-w-2xl mx-auto font-inter"
         >
           Stop settling for average. Partner with a technical team that delivers excellence, speed, and real business results.
         </motion.p>

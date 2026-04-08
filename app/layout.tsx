@@ -1,11 +1,11 @@
 import type {Metadata} from 'next';
-import { Sora, Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import './globals.css'; // Global styles
 import SmoothScroll from '@/components/SmoothScroll';
 
-const sora = Sora({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-sora',
+  variable: '--font-plus-jakarta',
 });
 
 const inter = Inter({
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable} dark}`}>
+    <html lang="en" className={`${jakarta.variable} ${inter.variable} dark}`}>
       <body className="bg-[#0B0F19] text-white font-inter antialiased selection:bg-[#22C55E]/30 selection:text-white overflow-x-hidden" suppressHydrationWarning>
         <SmoothScroll>
           {children}

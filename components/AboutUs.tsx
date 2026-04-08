@@ -49,12 +49,12 @@ export default function AboutUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-agency text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-8">
+            <h2 className="font-plus-jakarta text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
               Pioneering the <br />
               <span className="text-gradient">Future of Tech</span>
             </h2>
             
-            <div className="space-y-6 text-gray-400 text-lg md:text-xl leading-relaxed font-sora">
+            <div className="space-y-6 text-gray-400 text-lg md:text-xl leading-relaxed font-inter">
               <p>
                 At GrowthAI, we orchestrate the perfect symphony of cutting-edge technology and human creativity. We specialize in building robust web applications, scalable mobile apps, and custom software solutions designed for growth.
               </p>
@@ -73,7 +73,7 @@ export default function AboutUs() {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-sora backdrop-blur-sm">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-inter backdrop-blur-sm">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-[#22C55E]"></span>
@@ -99,10 +99,10 @@ export default function AboutUs() {
                 >
                   <stat.icon className="w-8 h-8" style={{ color: stat.color }} />
                 </div>
-                <h3 className="font-agency text-4xl md:text-5xl font-bold text-white mb-2 tracking-wider">
+                <h3 className="font-plus-jakarta text-4xl md:text-5xl font-bold text-white mb-2 tracking-wider">
                   {stat.value}
                 </h3>
-                <p className="text-gray-400 font-sora text-sm md:text-base uppercase tracking-widest font-semibold">
+                <p className="text-gray-400 font-inter text-sm md:text-base uppercase tracking-widest font-semibold">
                   {stat.label}
                 </p>
               </motion.div>

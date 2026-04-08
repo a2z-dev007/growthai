@@ -18,10 +18,10 @@ export default function ContactForm() {
           viewport={{ once: true }}
           className="flex-1"
         >
-          <h2 className="font-agency text-4xl md:text-6xl font-bold uppercase tracking-tight mb-6">
+          <h2 className="font-plus-jakarta text-4xl md:text-6xl font-bold tracking-tight mb-6">
             Ready to <span className="text-gradient">Innovate?</span>
           </h2>
-          <p className="text-gray-400 text-sm md:text-lg mb-8 max-w-lg leading-relaxed font-sora">
+          <p className="text-gray-400 text-sm md:text-lg mb-8 max-w-lg leading-relaxed font-inter">
             Let's discuss how we can accelerate your digital journey. Whether you're a startup looking for an MVP or an enterprise needing custom software, we're here to help.
           </p>
           

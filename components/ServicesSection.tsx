@@ -82,7 +82,7 @@ export default function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-agency text-3xl md:text-5xl font-bold uppercase tracking-tight mb-6"
+            className="font-plus-jakarta text-3xl md:text-5xl font-bold tracking-tight mb-6"
           >
             Our <span className="text-gradient">Services</span>
           </motion.h2>
@@ -91,7 +91,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-sora"
+            className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-inter"
           >
             <span className="text-white font-semibold">We build AI Intelligent products and platforms</span> that accelerate your growth and dominate your industry.
           </motion.p>
@@ -116,7 +116,7 @@ export default function ServicesSection() {
                   <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
                     <service.icon className="w-7 h-7" style={{ color: service.color }} />
                   </div>
-                  <h3 className="font-sora text-xl font-bold mb-3 text-white">{service.title}</h3>
+                  <h3 className="font-inter text-xl font-bold mb-3 text-white">{service.title}</h3>
                   <p className="text-gray-400 leading-relaxed">{service.description}</p>
                 </div>
               </TiltCard>

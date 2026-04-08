@@ -81,7 +81,7 @@ export default function WhyGrowthAI() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-agency text-3xl md:text-5xl font-bold uppercase tracking-tight mb-6"
+            className="font-plus-jakarta text-3xl md:text-5xl font-bold tracking-tight mb-6"
           >
             Why Partner with <span className="text-gradient">Us?</span>
           </motion.h2>
@@ -90,7 +90,7 @@ export default function WhyGrowthAI() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-sora"
+            className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-inter"
           >
             We operate across <span className="text-white font-bold italic underline decoration-[#22C55E]/50 underline-offset-4">all domains</span>. From <span className="text-white font-medium">Healthcare to Finance & Marketing</span>, we engineer growth engines designed to dominate your industry.
           </motion.p>
@@ -114,7 +114,7 @@ export default function WhyGrowthAI() {
                   <reason.icon className="w-8 h-8" style={{ color: reason.color }} />
                 </div>
                 
-                <h3 className="font-sora text-2xl font-bold mb-4 text-white relative z-10">{reason.title}</h3>
+                <h3 className="font-inter text-2xl font-bold mb-4 text-white relative z-10">{reason.title}</h3>
                 <p className="text-gray-400 leading-relaxed text-lg relative z-10">{reason.description}</p>
               </TiltCard>
             </motion.div>

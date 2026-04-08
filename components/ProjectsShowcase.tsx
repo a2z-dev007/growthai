@@ -88,7 +88,7 @@ function ProjectGalleryModal({ project, onClose }: { project: Project; onClose: 
         onClick={(e) => e.stopPropagation()}
       >
         <div className="text-center mb-8">
-          <h3 className="text-4xl md:text-6xl font-agency font-bold text-white tracking-widest uppercase mb-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+          <h3 className="text-4xl md:text-6xl font-plus-jakarta font-bold text-white tracking-widest mb-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
             {project.title}
           </h3>
           <div className="inline-flex px-6 py-2 rounded-2xl bg-[#22C55E]/10 border border-[#22C55E]/30 text-[#22C55E] text-sm font-bold uppercase tracking-widest">
@@ -198,18 +198,18 @@ function ProjectCard({ project, onOpenGallery }: { project: Project; onOpenGalle
             <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-xl bg-[#0EA5E9]/10 border border-[#0EA5E9]/20 text-[#0EA5E9] text-[10px] md:text-xs font-bold uppercase tracking-widest">
               {project.category}
             </span>
-            <h3 className="font-agency text-3xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-tight leading-none group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#22C55E] group-hover:to-[#0EA5E9] transition-all duration-500">
+            <h3 className="font-plus-jakarta text-3xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#22C55E] group-hover:to-[#0EA5E9] transition-all duration-500">
               {project.title}
             </h3>
           </div>
 
-          <p className="text-gray-400 text-sm md:text-lg lg:text-xl leading-relaxed font-sora line-clamp-4 lg:line-clamp-none">
+          <p className="text-gray-400 text-sm md:text-lg lg:text-xl leading-relaxed font-inter line-clamp-4 lg:line-clamp-none">
             {project.description}
           </p>
 
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
-              <span key={tag} className="px-3 py-1 md:px-4 md:py-2 rounded-xl bg-white/5 text-gray-400 font-sora text-[10px] md:text-sm border border-white/5 group-hover:border-[#22C55E]/30 transition-colors">
+              <span key={tag} className="px-3 py-1 md:px-4 md:py-2 rounded-xl bg-white/5 text-gray-400 font-inter text-[10px] md:text-sm border border-white/5 group-hover:border-[#22C55E]/30 transition-colors">
                 {tag}
               </span>
             ))}
@@ -267,7 +267,7 @@ export default function ProjectsShowcase() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-agency text-3xl md:text-7xl font-bold uppercase tracking-tight mb-6"
+            className="font-plus-jakarta text-3xl md:text-7xl font-bold tracking-tight mb-6"
           >
             Digital <span className="text-gradient">Masterpieces</span>
           </motion.h2>
@@ -275,7 +275,7 @@ export default function ProjectsShowcase() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto font-sora"
+            className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto font-inter"
           >
             A curated selection of high-performance digital products engineered for excellence.
           </motion.p>
@@ -291,7 +291,7 @@ export default function ProjectsShowcase() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2.5 md:px-8 md:py-3 rounded-2xl text-xs md:text-sm font-sora font-semibold transition-all duration-300 border ${
+              className={`px-6 py-2.5 md:px-8 md:py-3 rounded-2xl text-xs md:text-sm font-inter font-semibold transition-all duration-300 border ${
                 activeCategory === category
                   ? 'bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white border-transparent shadow-[0_0_20px_rgba(34,197,94,0.4)] scale-105'
                   : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10 hover:text-white'
@@ -336,8 +336,8 @@ export default function ProjectsShowcase() {
 
             {filteredProjects.length === 0 && (
               <motion.div className="w-full text-center py-32 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
-                <h3 className="text-3xl font-agency font-bold text-white mb-4 uppercase tracking-wider">Innovations Pending</h3>
-                <p className="text-gray-400 font-sora max-w-md mx-auto">We're currently finalizing exciting new projects. Check back soon for our latest masterpieces.</p>
+                <h3 className="text-3xl font-plus-jakarta font-bold text-white mb-4 tracking-wider">Innovations Pending</h3>
+                <p className="text-gray-400 font-inter max-w-md mx-auto">We're currently finalizing exciting new projects. Check back soon for our latest masterpieces.</p>
               </motion.div>
             )}
           </div>

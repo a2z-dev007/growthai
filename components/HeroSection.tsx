@@ -112,7 +112,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-agency text-3xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl uppercase leading-[1.2]"
+          className="font-plus-jakarta text-3xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-[1.2]"
         >
           Engineering Performance-Driven <span className="text-gradient">Digital Products</span>
         </motion.h1>
@@ -121,7 +121,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base md:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed font-sora"
+          className="text-base md:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed font-inter"
         >
           Your strategic partner for custom software across <span className="text-white font-medium italic">all domains.</span> From <span className="text-white font-semibold">Healthcare to Finance & Marketing</span>, <span className="text-white px-1">we build AI Intelligent products and platforms</span> that turn visionary ideas into market-leading realities.
         </motion.p>
