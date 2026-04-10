@@ -1,9 +1,41 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Send, User, Mail, MessageSquare } from 'lucide-react';
+import { Send, User, Mail, MessageSquare, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { useState } from 'react';
+import { sendContactEmail } from '@/app/actions/contact';
 
 export default function ContactForm() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    
+    setStatus('loading');
+    setMessage('');
+    
+    // Artificial delay for better UX and to ensure state is rendered
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    try {
+      const result = await sendContactEmail(formData);
+      
+      if (result.success) {
+        setStatus('success');
+        setMessage(result.success);
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setStatus('error');
+        setMessage(result.error || 'Something went wrong.');
+      }
+    } catch (err) {
+      setStatus('error');
+      setMessage('A connection error occurred.');
+    }
+  }
+
   return (
     <section id="contact" className="py-12 md:py-24 relative bg-[#0B0F19] overflow-hidden">
       {/* Background decorations */}
@@ -45,7 +77,11 @@ export default function ContactForm() {
           viewport={{ once: true }}
           className="flex-1 w-full max-w-lg"
         >
-          <form className="glass-panel p-8 md:p-10 flex flex-col gap-6 relative overflow-visible group mt-5 md:mt-0">
+          <form 
+            id="contact-form"
+            onSubmit={handleSubmit}
+            className="glass-panel p-8 md:p-10 flex flex-col gap-6 relative overflow-visible group mt-5 md:mt-0"
+          >
              {/* Glow effect that follows form slightly */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] rounded-2xl opacity-0 hover:opacity-10 md:group-hover:opacity-20 blur-md transition-opacity duration-700 pointer-events-none -z-10"></div>
             
@@ -54,6 +90,7 @@ export default function ContactForm() {
                 <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input 
                   type="text" 
+                  name="name"
                   placeholder="Your Name" 
                   className="w-full bg-[#0B0F19]/80 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#22C55E]/50 focus:ring-1 focus:ring-[#22C55E]/50 transition-all shadow-inner"
                   required
@@ -64,6 +101,7 @@ export default function ContactForm() {
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input 
                   type="email" 
+                  name="email"
                   placeholder="Email Address" 
                   className="w-full bg-[#0B0F19]/80 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#0EA5E9]/50 focus:ring-1 focus:ring-[#0EA5E9]/50 transition-all shadow-inner"
                   required
@@ -73,6 +111,7 @@ export default function ContactForm() {
               <div className="relative">
                 <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-gray-400" />
                 <textarea 
+                  name="message"
                   placeholder="Tell us about your project..." 
                   rows={4}
                   className="w-full bg-[#0B0F19]/80 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#22C55E]/50 focus:ring-1 focus:ring-[#22C55E]/50 transition-all resize-none shadow-inner"
@@ -80,14 +119,29 @@ export default function ContactForm() {
                 />
               </div>
 
+              {(status === 'success' || status === 'error') && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-xl flex items-center gap-3 text-sm font-medium ${
+                    status === 'success' ? 'bg-[#22C55E]/10 text-[#22C55E] border border-[#22C55E]/20' : 
+                    'bg-red-500/10 text-red-400 border border-red-500/20'
+                  }`}
+                >
+                  {status === 'success' ? <CheckCircle2 className="w-4 h-4" /> : <AlertCircle className="w-4 h-4" />}
+                  {message}
+                </motion.div>
+              )}
+
               <motion.button 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-shadow mt-2"
+                disabled={status === 'loading'}
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#22C55E] to-[#0EA5E9] text-white font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-shadow mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Send Message</span>
-                <Send className="w-5 h-5" />
+                <span>{status === 'loading' ? 'Sending...' : 'Send Message'}</span>
+                {status === 'loading' ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
               </motion.button>
             </div>
           </form>

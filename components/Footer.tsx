@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Twitter, Linkedin, Github, Mail, Phone, Globe } from 'lucide-react';
+import { Twitter, Linkedin, Github, Mail, Phone, Globe, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -35,8 +35,8 @@ export default function Footer() {
             <h4 className="font-inter font-bold text-white mb-6 uppercase tracking-wider text-sm">Company</h4>
             <ul className="space-y-4">
               <li><Link href="/#about" className="text-gray-400 hover:text-[#22C55E] transition-colors">About Us</Link></li>
-              <li><Link href="/#framework" className="text-gray-400 hover:text-[#22C55E] transition-colors">Framework</Link></li>
-              <li><Link href="/#projects" className="text-gray-400 hover:text-[#22C55E] transition-colors">Our Work</Link></li>
+              <li><Link href="/#framework" className="text-gray-400 hover:text-[#22C55E] transition-colors">Our Process</Link></li>
+              <li><Link href="/#projects" className="text-gray-400 hover:text-[#22C55E] transition-colors">Projects</Link></li>
 
             </ul>
           </div>
@@ -44,12 +44,12 @@ export default function Footer() {
           <div>
             <h4 className="font-inter font-bold text-white mb-6 uppercase tracking-wider text-sm">Services</h4>
             <ul className="space-y-4">
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">WordPress Development</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Mobile Apps</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Ecommerce Solutions</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">SaaS Products</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">Custom Software</Link></li>
-              <li><Link href="/#services" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Chatbots</Link></li>
+              <li><Link href="/services/web-application-development" className="text-gray-400 hover:text-[#22C55E] transition-colors">Web Applications</Link></li>
+              <li><Link href="/services/mobile-apps" className="text-gray-400 hover:text-[#22C55E] transition-colors">Mobile Apps</Link></li>
+              <li><Link href="/services/ecommerce" className="text-gray-400 hover:text-[#22C55E] transition-colors">Ecommerce</Link></li>
+              <li><Link href="/services/ui-ux-design" className="text-gray-400 hover:text-[#22C55E] transition-colors">UI/UX Design</Link></li>
+              <li><Link href="/services/ai-chatbots" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Chatbots</Link></li>
+              <li><Link href="/services" className="text-white font-bold hover:text-[#22C55E] transition-colors flex items-center gap-2">View All <ArrowRight size={14} /></Link></li>
             </ul>
           </div>
           
