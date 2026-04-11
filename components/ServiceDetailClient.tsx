@@ -5,8 +5,13 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { CheckCircle2, ArrowRight, Star, ShieldCheck, Zap } from 'lucide-react';
 import Link from 'next/link';
+import { services } from '@/lib/services-data';
 
-export default function ServiceDetailClient({ service }: { service: any }) {
+export default function ServiceDetailClient({ slug }: { slug: string }) {
+  const service = services.find(s => s.slug === slug);
+  
+  if (!service) return null;
+
   const Icon = service.icon;
   
   return (
