@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home, Info, Briefcase, Workflow, HelpCircle } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,12 +41,11 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: 'Home', href: '/', onClick: (e: any) => { setIsOpen(false); if(pathname === '/') { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); } } },
-    { name: 'About Us', href: '/#about', hash: '#about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Our Process', href: '/#framework', hash: '#framework' },
-    // { name: 'Projects', href: '/#projects', hash: '#projects' },
-    { name: 'FAQ', href: '/faq' },
+    { name: 'Home', icon: Home, href: '/', onClick: (e: any) => { setIsOpen(false); if(pathname === '/') { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); } } },
+    { name: 'About Us', icon: Info, href: '/#about', hash: '#about' },
+    { name: 'Services', icon: Briefcase, href: '/services' },
+    { name: 'Our Process', icon: Workflow, href: '/#framework', hash: '#framework' },
+    { name: 'FAQ', icon: HelpCircle, href: '/faq' },
   ];
 
   return (
@@ -71,10 +70,11 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href} 
                 onClick={link.onClick || (link.hash ? (e) => handleNavClick(e, link.hash!) : undefined)}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-colors flex items-center gap-2 ${
                   (link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)) ? 'text-[#22C55E]' : 'text-gray-300 hover:text-white'
                 }`}
               >
+                <link.icon className="w-4 h-4" />
                 {link.name}
               </Link>
             ))}
@@ -137,10 +137,11 @@ export default function Navbar() {
                       if (link.onClick) link.onClick(e);
                       else if (link.hash) handleNavClick(e as any, link.hash);
                     }}
-                    className={`text-2xl font-bold transition-colors ${
+                    className={`text-2xl font-bold transition-colors flex items-center gap-4 ${
                       (link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)) ? 'text-[#22C55E]' : 'text-gray-100'
                     }`}
                   >
+                    <link.icon className="w-6 h-6" />
                     {link.name}
                   </Link>
                 ))}
