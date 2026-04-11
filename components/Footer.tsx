@@ -16,7 +16,7 @@ export default function Footer() {
                <img src="/growth-logo-ai.png" alt="GrowthAI Logo" className="h-32 w-auto" />
             </Link>
             <p className="text-gray-400 max-w-sm mb-8 leading-relaxed font-inter">
-              Engineering performance-driven digital products that scale. <span className="text-white font-semibold italic">We build AI Intelligent products and platforms</span> for visionaries world-wide.
+              Growthai builds scalable digital products for startups and ambitious businesses through AI-powered development and elite engineering execution.
             </p>
             {/* <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all">
@@ -36,19 +36,18 @@ export default function Footer() {
             <ul className="space-y-4">
               <li><Link href="/#about" className="text-gray-400 hover:text-[#22C55E] transition-colors">About Us</Link></li>
               <li><Link href="/#framework" className="text-gray-400 hover:text-[#22C55E] transition-colors">Our Process</Link></li>
-              <li><Link href="/#projects" className="text-gray-400 hover:text-[#22C55E] transition-colors">Projects</Link></li>
-
+              {/* <li><Link href="/#projects" className="text-gray-400 hover:text-[#22C55E] transition-colors">Projects</Link></li> */}
+              <li><Link href="/faq" className="text-gray-400 hover:text-[#22C55E] transition-colors">FAQ</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-inter font-bold text-white mb-6 uppercase tracking-wider text-sm">Services</h4>
             <ul className="space-y-4">
-              <li><Link href="/services/web-application-development" className="text-gray-400 hover:text-[#22C55E] transition-colors">Web Applications</Link></li>
-              <li><Link href="/services/mobile-apps" className="text-gray-400 hover:text-[#22C55E] transition-colors">Mobile Apps</Link></li>
-              <li><Link href="/services/ecommerce" className="text-gray-400 hover:text-[#22C55E] transition-colors">Ecommerce</Link></li>
-              <li><Link href="/services/ui-ux-design" className="text-gray-400 hover:text-[#22C55E] transition-colors">UI/UX Design</Link></li>
-              <li><Link href="/services/ai-chatbots" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI Chatbots</Link></li>
+              <li><Link href="/services/web-application-development" className="text-gray-400 hover:text-[#22C55E] transition-colors">Web Apps</Link></li>
+              <li><Link href="/services/mobile-app-development" className="text-gray-400 hover:text-[#22C55E] transition-colors">Mobile Apps</Link></li>
+              <li><Link href="/services/ai-automation-solutions" className="text-gray-400 hover:text-[#22C55E] transition-colors">AI & Automation</Link></li>
+              <li><Link href="/services/mvp-development" className="text-gray-400 hover:text-[#22C55E] transition-colors">MVP Dev</Link></li>
               <li><Link href="/services" className="text-white font-bold hover:text-[#22C55E] transition-colors flex items-center gap-2">View All <ArrowRight size={14} /></Link></li>
             </ul>
           </div>
@@ -62,12 +61,12 @@ export default function Footer() {
                   <span>contact@growthai.in</span>
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="tel:+917071967997" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
                   <Phone className="w-4 h-4 group-hover:text-[#22C55E]" />
                   <span>+91 7071967997</span>
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="https://growthai.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
                   <Globe className="w-4 h-4 group-hover:text-[#0EA5E9]" />

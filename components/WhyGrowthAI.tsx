@@ -1,44 +1,44 @@
 'use client';
 
 import { motion, useTransform, useMotionValue } from 'framer-motion';
-import { BrainCircuit, Rocket, DollarSign, Award, Zap, Clock, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { BrainCircuit, Rocket, DollarSign, Award, Zap, Clock, ShieldCheck, HeartHandshake, MessageSquare } from 'lucide-react';
 import { useEffect } from 'react';
 import TiltCard from './TiltCard';
 
 const reasons = [
   {
-    title: 'Affordable Pricing',
-    description: 'Get world-class development and premium designs at competitive rates, optimized for your business growth.',
-    icon: DollarSign,
+    title: 'AI-Accelerated Delivery',
+    description: 'We leverage modern AI-assisted workflows to reduce development timelines while maintaining engineering quality.',
+    icon: Zap,
     color: '#22C55E',
   },
   {
-    title: 'Top-Tier Quality',
-    description: 'We deliver pixel-perfect, scalable, and secure products using industry-leading quality standards.',
-    icon: ShieldCheck,
+    title: 'Product-Minded Engineers',
+    description: 'We think beyond code—helping refine product decisions, UX, architecture, and scalability.',
+    icon: BrainCircuit,
     color: '#0EA5E9',
   },
   {
-    title: 'Rapid Turnaround',
-    description: 'Launch your product faster with our agile development process, moving from concept to launch in record time.',
-    icon: Zap,
-    color: '#F59E0B',
-  },
-  {
-    title: 'Tailored Solutions',
-    description: 'We don\'t believe in one-size-fits-all. Every solution is custom-built to match your unique brand identity.',
-    icon: BrainCircuit,
+    title: 'Enterprise-Grade Architecture',
+    description: 'Your product is built for scale from day one using robust, battle-tested technologies.',
+    icon: ShieldCheck,
     color: '#8B5CF6',
   },
   {
-    title: 'Expert Support',
-    description: 'Our team is available round-the-clock to ensure your systems remain robust and high-performing.',
-    icon: Clock,
+    title: 'End-to-End Ownership',
+    description: 'Strategy, design, development, deployment, and support under one roof.',
+    icon: Rocket,
+    color: '#F59E0B',
+  },
+  {
+    title: 'Founder-Friendly Communication',
+    description: 'Transparent updates, milestone demos, and proactive collaboration throughout the journey.',
+    icon: MessageSquare,
     color: '#14B8A6',
   },
   {
-    title: 'Strategic Partnership',
-    description: 'We act as your dedicated technology partners, guiding you through every stage of your digital journey.',
+    title: 'Long-Term Partnership',
+    description: 'We support your growth beyond launch, ensuring your product evolves with your business.',
     icon: HeartHandshake,
     color: '#EC4899',
   },
@@ -81,18 +81,18 @@ export default function WhyGrowthAI() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-plus-jakarta text-3xl md:text-5xl font-bold tracking-tight mb-6"
+            className="font-plus-jakarta text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-6"
           >
-            Why Partner with <span className="text-gradient">Us?</span>
+            Why Founders Choose <span className="text-gradient">Growthai</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-inter"
+            className="text-gray-400 max-w-2xl mx-auto text-sm md:text-xl font-inter"
           >
-            We operate across <span className="text-white font-bold italic underline decoration-[#22C55E]/50 underline-offset-4">all domains</span>. From <span className="text-white font-medium">Healthcare to Finance & Marketing</span>, we engineer growth engines designed to dominate your industry.
+            We don't just build software. We build <span className="text-white font-bold italic underline decoration-[#22C55E]/50 underline-offset-4">business engines</span> designed to dominate your industry.
           </motion.p>
         </div>
 

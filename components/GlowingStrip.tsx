@@ -3,6 +3,7 @@
 import React from 'react';
 
 const WORDS = [
+  "SPEED", "QUALITY", "SCALE", "EXECUTION",
   "SECURE", "RELIABLE", "ENGAGING", "ACCESSIBLE", "RESPONSIVE", 
   "DYNAMIC", "SCALABLE", "SEARCH OPTIMIZED", "INTERACTIVE"
 ];

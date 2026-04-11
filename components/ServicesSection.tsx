@@ -70,7 +70,7 @@ export default function ServicesSection() {
 
         <div className="mt-16 text-center">
              <Link href="/services" className="px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all font-bold inline-flex items-center gap-3">
-                View All {services.length} Services <ArrowUpRight size={20} />
+                View All Services
              </Link>
         </div>
       </div>

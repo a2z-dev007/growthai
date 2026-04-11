@@ -215,6 +215,17 @@ function ProjectCard({ project, onOpenGallery }: { project: Project; onOpenGalle
             ))}
           </div>
 
+          <div className="grid grid-cols-2 gap-4 py-4 border-t border-white/5">
+              <div>
+                <div className="text-[#22C55E] font-bold text-xl md:text-2xl font-plus-jakarta">40%</div>
+                <div className="text-gray-500 text-[10px] md:text-sm uppercase tracking-wider font-bold">Speed Improvement</div>
+              </div>
+              <div>
+                <div className="text-[#0EA5E9] font-bold text-xl md:text-2xl font-plus-jakarta">2.5X</div>
+                <div className="text-gray-500 text-[10px] md:text-sm uppercase tracking-wider font-bold">Engagement Growth</div>
+              </div>
+          </div>
+
           <div className="flex flex-row items-center gap-3 pt-4 md:pt-8 w-full">
             <button
               onClick={onOpenGallery}
@@ -269,7 +280,7 @@ export default function ProjectsShowcase() {
             viewport={{ once: true }}
             className="font-plus-jakarta text-3xl md:text-7xl font-bold tracking-tight mb-6"
           >
-            Digital <span className="text-gradient">Masterpieces</span>
+            Built for <span className="text-gradient">Ambitious Founders</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

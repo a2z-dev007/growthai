@@ -8,27 +8,27 @@ export default function FloatingContact() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const contactOptions = [
-    {
-      id: 'whatsapp',
-      icon: MessageCircle,
-      label: 'WhatsApp',
-      color: '#25D366',
-      href: 'https://wa.me/1234567890', // Replace with actual number
-    },
+    // {
+    //   id: 'whatsapp',
+    //   icon: MessageCircle,
+    //   label: 'WhatsApp',
+    //   color: '#25D366',
+    //   href: 'https://wa.me/1234567890', // Replace with actual number
+    // },
     {
       id: 'email',
       icon: Mail,
       label: 'Email',
       color: '#0EA5E9',
-      href: 'mailto:contact@growthai.com', // Replace with actual email
+      href: 'mailto:contact@growthai.in', // Replace with actual email
     },
-    {
-      id: 'phone',
-      icon: Phone,
-      label: 'Phone',
-      color: '#22C55E',
-      href: 'tel:+1234567890', // Replace with actual number
-    },
+    // {
+    //   id: 'phone',
+    //   icon: Phone,
+    //   label: 'Phone',
+    //   color: '#22C55E',
+    //   href: 'tel:+1234567890', // Replace with actual number
+    // },
   ];
 
   return (

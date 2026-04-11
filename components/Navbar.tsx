@@ -45,7 +45,8 @@ export default function Navbar() {
     { name: 'About Us', href: '/#about', hash: '#about' },
     { name: 'Services', href: '/services' },
     { name: 'Our Process', href: '/#framework', hash: '#framework' },
-    { name: 'Projects', href: '/#projects', hash: '#projects' },
+    // { name: 'Projects', href: '/#projects', hash: '#projects' },
+    { name: 'FAQ', href: '/faq' },
   ];
 
   return (
@@ -71,7 +72,7 @@ export default function Navbar() {
                 href={link.href} 
                 onClick={link.onClick || (link.hash ? (e) => handleNavClick(e, link.hash!) : undefined)}
                 className={`text-sm font-medium transition-colors ${
-                  (link.href === '/services' && pathname.startsWith('/services')) ? 'text-[#22C55E]' : 'text-gray-300 hover:text-white'
+                  (link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)) ? 'text-[#22C55E]' : 'text-gray-300 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -81,8 +82,8 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4 relative">
             <div className="hidden md:block">
-              <Link href="/#contact" onClick={(e) => handleNavClick(e, '#contact')} className="btn-primary py-2 px-6 text-xs md:text-sm">
-                Contact Us
+              <Link href="/#contact" onClick={(e) => handleNavClick(e, '#contact')} className="btn-primary py-2.5 px-6 text-xs md:text-sm font-bold shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105 transition-transform">
+                Book a Strategy Call
               </Link>
             </div>
 
@@ -131,9 +132,13 @@ export default function Navbar() {
                   <Link 
                     key={link.name}
                     href={link.href} 
-                    onClick={link.onClick || (link.hash ? (e) => handleNavClick(e, link.hash!) : undefined)}
+                    onClick={(e) => {
+                      setIsOpen(false);
+                      if (link.onClick) link.onClick(e);
+                      else if (link.hash) handleNavClick(e as any, link.hash);
+                    }}
                     className={`text-2xl font-bold transition-colors ${
-                      (link.href === '/services' && pathname.startsWith('/services')) ? 'text-[#22C55E]' : 'text-gray-100'
+                      (link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)) ? 'text-[#22C55E]' : 'text-gray-100'
                     }`}
                   >
                     {link.name}
@@ -141,10 +146,13 @@ export default function Navbar() {
                 ))}
                 <Link 
                   href="/#contact" 
-                  onClick={(e) => handleNavClick(e, '#contact')}
-                  className="btn-primary py-4 px-6 text-center text-sm mt-4 shadow-lg"
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    handleNavClick(e, '#contact');
+                  }}
+                  className="btn-primary py-4 px-6 text-center text-sm mt-4 shadow-lg font-bold"
                 >
-                  Contact Us
+                  Book a Strategy Call
                 </Link>
               </div>
             </motion.div>

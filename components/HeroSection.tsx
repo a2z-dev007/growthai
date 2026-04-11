@@ -102,42 +102,44 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 border border-[#22C55E]/20"
         >
           <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-          <span className="text-sm font-medium text-gray-300">Strategic Design. Expert Development. Exponential Growth.</span>
+          <span className="text-sm font-medium text-gray-300">Trusted by founders building the next generation of digital products.</span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-plus-jakarta text-3xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-[1.2]"
+          className="font-plus-jakarta text-4xl md:text-8xl font-black tracking-tight mb-8 max-w-5xl leading-[1.1] uppercase"
         >
-          Engineering Performance-Driven <span className="text-gradient">Digital Products</span>
+          Launch Faster. <br />
+          Scale Smarter. <br />
+          Build with <span className="text-gradient">Growthai.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base md:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed font-inter"
+          className="text-lg md:text-2xl text-gray-400 max-w-2xl mb-12 leading-relaxed font-inter"
         >
-          Your strategic partner for custom software across <span className="text-white font-medium italic">all domains.</span> From <span className="text-white font-semibold">Healthcare to Finance & Marketing</span>, <span className="text-white px-1">we build AI Intelligent products and platforms</span> that turn visionary ideas into market-leading realities.
+          AI-accelerated software development for startups that need <span className="text-white font-bold italic">speed, quality, and execution</span> they can trust.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
         >
-          <button className="btn-primary w-fit">
-            Build Your Product
+          <button className="btn-primary w-fit text-lg px-8 py-4">
+            Book a Strategy Call
           </button>
-          <a href="tel:+917071967997" className="btn-secondary w-fit">
-            Free Consultation
-          </a>
+          {/* <button className="btn-secondary w-fit text-lg px-8 py-4 bg-white/5 border-white/10 hover:bg-white/10">
+            View Our Work
+          </button> */}
         </motion.div>
       </div>
     </section>

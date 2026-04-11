@@ -7,23 +7,33 @@ import TiltCard from './TiltCard';
 const steps = [
   {
     number: '01',
-    title: 'Strategy & Architecture',
-    description: 'We audit your business needs, map out technical requirements, and design a scalable architecture for your product.',
+    title: 'Discover',
+    description: 'Understand business goals, users, and product vision through deep-dive workshops.',
   },
   {
     number: '02',
-    title: 'UI/UX Prototyping',
-    description: 'Interactive wireframes and high-fidelity designs are crafted to ensure an intuitive and premium user experience.',
+    title: 'Strategize',
+    description: 'Define roadmap, architecture, timelines, and milestones for a predictable delivery.',
   },
   {
     number: '03',
-    title: 'Agile Full-Stack Development',
-    description: 'Our expert engineers build your product using robust technologies, ensuring high performance and security.',
+    title: 'Design',
+    description: 'Craft intuitive UX/UI aligned with product goals and your brand identity.',
   },
   {
     number: '04',
-    title: 'Deployment & Support',
-    description: 'We handle the global launch, provide ongoing maintenance, and iterate based on performance analytics.',
+    title: 'Develop',
+    description: 'AI-accelerated agile development with weekly demos and continuous feedback.',
+  },
+  {
+    number: '05',
+    title: 'Launch',
+    description: 'Deployment, QA, optimization, and production rollout to your users.',
+  },
+  {
+    number: '06',
+    title: 'Scale',
+    description: 'Ongoing support, feature expansion, and growth optimization for long-term success.',
   },
 ];
 
@@ -44,18 +54,18 @@ export default function MVPFramework() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-plus-jakarta text-4xl md:text-5xl font-bold tracking-tight mb-6"
+            className="font-plus-jakarta text-4xl md:text-7xl font-bold tracking-tight mb-6"
           >
-            Rapid MVP <span className="text-gradient">Framework</span>
+            Our Execution <span className="text-gradient">Framework</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto text-lg"
+            className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-inter"
           >
-            From concept to launch in weeks, not months. Our proven process guarantees speed without sacrificing quality.
+            A high-velocity process engineered for speed, quality, and complete transparency.
           </motion.p>
         </div>
 
@@ -89,7 +99,7 @@ export default function MVPFramework() {
                       {step.number}
                     </div>
                     <h3 className="font-plus-jakarta text-2xl font-bold mb-4 text-white relative z-10">{step.title}</h3>
-                    <p className="text-gray-400 leading-relaxed relative z-10">{step.description}</p>
+                    <p className="text-gray-400 leading-relaxed relative z-10 font-inter">{step.description}</p>
                   </TiltCard>
                 </motion.div>
               </div>

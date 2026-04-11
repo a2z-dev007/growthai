@@ -39,18 +39,21 @@ function Counter({ end, suffix = '', label }: { end: number; suffix?: string; la
 
 export default function SocialProof() {
   return (
-    <section className="py-10 md:py-20 relative z-10 bg-[#0B0F19]">
+    <section className="py-24 md:py-32 relative z-10 bg-[#0B0F19] overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          <Counter end={12} suffix="+" label="Projects Delivered" />
-          <Counter end={12} suffix="+" label="Global Clients" />
-          <Counter end={5} suffix="+" label="Full-Scale Apps" />
+          <Counter end={10} suffix="+" label="Years Experience" />
+          <Counter end={12} suffix="" label="Senior Engineers" />
+          <Counter end={50} suffix="+" label="Projects Delivered" />
+          <Counter end={25} suffix="+" label="Global Clients" />
         </motion.div>
       </div>
     </section>
