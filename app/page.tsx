@@ -29,7 +29,7 @@ export default function Home() {
       <MVPFramework />
       <GuaranteeSection />
       {/* <ProjectsShowcase /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <IdealFit />
       <FAQ />
       <FinalCTA />
